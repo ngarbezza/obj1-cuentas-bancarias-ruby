@@ -1,4 +1,6 @@
 require 'test/unit'
+require_relative '../lib/integer'
+require_relative '../lib/peso'
 require_relative '../lib/caja_de_ahorros'
 
 class CajaDeAhorrosTest < Test::Unit::TestCase
