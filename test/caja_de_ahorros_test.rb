@@ -1,4 +1,5 @@
 require 'test/unit'
+require_relative '../lib/caja_de_ahorros'
 
 class CajaDeAhorrosTest < Test::Unit::TestCase
 

@@ -1,0 +1,3 @@
+class CajaDeAhorros
+
+end
