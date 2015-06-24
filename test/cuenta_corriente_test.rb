@@ -14,5 +14,18 @@ class CuentaCorrienteTest < Test::Unit::TestCase
     self.assert_equal una_cuenta_corriente.saldo, 0.pesos
   end
 
+  # test02DadaUnaCuentaCorrienteNuevaSiDeposito100pesosSuNuevoSaldoDebeSer100pesos
+  #
+  #     | unaCuentaCorriente |
+  #
+  #     unaCuentaCorriente := CuentaCorriente new.
+  #     unaCuentaCorriente depositar: 100 pesos.
+  #     self assert: unaCuentaCorriente saldo = 100 pesos
+  #
+  def test_02_dada_una_cuenta_corriente_nueva_si_deposito_100_pesos_su_nuevo_saldo_debe_ser_100_pesos
+    una_cuenta_corriente = CuentaCorriente.new
+    una_cuenta_corriente.depositar 100.pesos
+    self.assert_equal una_cuenta_corriente.saldo, 0.pesos
+  end
 
 end
