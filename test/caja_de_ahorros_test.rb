@@ -60,4 +60,38 @@ class CajaDeAhorrosTest < Test::Unit::TestCase
     self.assert_equal una_caja_de_ahorros.saldo, 200.pesos
   end
 
+  # test05DadaUnaCajaDeAhorrosConCantidadDeExtraccionesMensualesIgualA5SiHagoUnaExtraccionSuSaldoYSusExtraccionesMensualesNoDebenVariar
+  #
+  #     | unaCajaDeAhorros cantidadDeExtraccionesMensualesInicial saldoInicial |
+  #
+  #     unaCajaDeAhorros := CajaDeAhorros new.
+  #     unaCajaDeAhorros depositar: 200 pesos.
+  #     unaCajaDeAhorros extraer: 10 pesos;
+  #                      extraer: 10 pesos;
+  #                      extraer: 10 pesos;
+  #                      extraer: 10 pesos;
+  #                      extraer: 10 pesos.
+  #     cantidadDeExtraccionesMensualesInicial := unaCajaDeAhorros cantidadDeExtraccionesMensuales.
+  #     saldoInicial := unaCajaDeAhorros saldo.
+  #     unaCajaDeAhorros extraer: 10 pesos.
+  #     self assert: unaCajaDeAhorros saldo = saldoInicial.
+  #     self assert: unaCajaDeAhorros cantidadDeExtraccionesMensuales = cantidadDeExtraccionesMensualesInicial
+  #
+  def test_05_dada_una_caja_de_ahorros_con_cantidad_de_extracciones_mensuales_igual_a_5_si_hago_una_extraccion_su_saldo_y_sus_extracciones_mensuales_no_deben_variar
+    una_caja_de_ahorros = CajaDeAhorros.new
+    una_caja_de_ahorros.depositar 200.pesos
+    una_caja_de_ahorros.extraer 10.pesos
+    una_caja_de_ahorros.extraer 10.pesos
+    una_caja_de_ahorros.extraer 10.pesos
+    una_caja_de_ahorros.extraer 10.pesos
+    una_caja_de_ahorros.extraer 10.pesos
+
+    cantidad_de_extracciones_mensuales_inicial = una_caja_de_ahorros.cantidad_de_extracciones_mensuales
+    saldo_inicial = una_caja_de_ahorros.saldo
+    una_caja_de_ahorros.extraer 10.pesos
+
+    self.assert_equal una_caja_de_ahorros.saldo, saldo_inicial
+    self.assert_equal una_caja_de_ahorros.cantidad_de_extracciones_mensuales, cantidad_de_extracciones_mensuales_inicial
+  end
+
 end
