@@ -1,4 +1,5 @@
 require 'test/unit'
+require_relative '../lib/cuenta_corriente'
 
 class CuentaCorrienteTest < Test::Unit::TestCase
 
