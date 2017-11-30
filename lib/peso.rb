@@ -1,5 +1,4 @@
 class Peso
-
   #
   # Incluimos comportamiento propio de objetos que deben saber compararse.
   # Al incluir este módulo ya tenemos implementados los mensajes =, <, >, etc.
@@ -8,16 +7,14 @@ class Peso
   include Comparable
 
   def self.con_valor(un_valor) # mensaje de clase
-    self.new un_valor
+    new(un_valor)
   end
 
   def initialize(un_valor) # mensaje de instancia
     @valor = un_valor
   end
 
-  def valor
-    @valor
-  end
+  attr_reader :valor
 
   # Mensaje que nos pide implementar el módulo Comparable para poder funcionar correctamente.
   def <=>(otro_peso)
@@ -31,5 +28,4 @@ class Peso
   def -(otro_peso)
     (self.valor - otro_peso.valor).pesos
   end
-
 end

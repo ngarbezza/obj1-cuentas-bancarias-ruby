@@ -7,7 +7,7 @@
 - no declaramos colaboradores locales, se definen cuando se necesitan
 - no declaramos colaboradores internos, se definen cuando se necesitan
 - en lugar de "objeto mensaje" es "objeto.mensaje"
-- no tenemos mensajes de palabra clave
+- no tenemos mensajes de palabra clave directamente, se puede lograr un efecto similar con los "named parameters"
 - tenemos más construcciones sintácticas (en lugar de ser resueltas como envío de mensajes a objetos)
     - definición de clases y métodos
     - if
@@ -23,6 +23,7 @@
 - las clases son objetos
 - el proceso de instanciación e inicialización es similar (mensaje de clase para instanciar, luego mensaje de instancia para inicializar)
 - disponemos de bloques
-- disponemos de colecciones con un protocolo muy similar a las de Pharo
+- disponemos de colecciones con un protocolo muy similar a las de Smalltalk
 - podemos extender clases existentes (por ejemplo, hacer que los números entiendan el mensaje `pesos`)
 - usamos convención CamelCase para los nombres de clases
+- tenemos un _framework_ de tests muy análogo (ambos derivan de la especificación de xUnit)
